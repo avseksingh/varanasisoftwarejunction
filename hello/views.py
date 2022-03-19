@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 from .models import Greeting
 from .models import Person
+
 
 # Create your views here.
 def index(request):
@@ -11,16 +11,19 @@ def index(request):
 
 
 def db(request):
-
     greeting = Greeting()
     greeting.save()
 
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
-def personentry(request):
 
+
+def personentry(request):
     person = Person()
+    person.name = "Champak"
+    person.address = "Varanasi"
+    person.age - 30
     person.save()
 
     persons = Person.objects.all()
