@@ -23,7 +23,7 @@ def personentry(request):
     person = Person()
     person.name = "Champak"
     person.address = "Varanasi"
-    person.age - 30
+    person.age = 30
     person.save()
 
     persons = Person.objects.all()
