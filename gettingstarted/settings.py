@@ -75,11 +75,15 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
+#ec2-3-211-221-185.compute-1.amazonaws.com
 DATABASES = {
     "default": {
-        "ENGINE" : "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+         'ENGINE': 'heroku pg:psql postgresql-sinuous-78827 --app varanasisoftwarejunction',
+        'NAME': 'd840kg2o4f8eq5',
+        'USER': 'rfrresazwanrql',
+        'PASSWORD': 'a8e11a04aada0a885e707358b9c456293a50c04f56fda13d2f197209d7e1b096',
+        'HOST': 'postgres://rfrresazwanrql:a8e11a04aada0a885e707358b9c456293a50c04f56fda13d2f197209d7e1b096@ec2-3-211-221-185.compute-1.amazonaws.com:5432/d840kg2o4f8eq5',
+        'PORT': '5432',
     }
 }
 
