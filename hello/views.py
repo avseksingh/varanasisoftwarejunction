@@ -12,7 +12,7 @@ def index(request):
 
 def newbase(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "newbase.html")
+    return render(request, "newindex.html")
 
 def use(request):
     requests.get("https://google.com")
