@@ -20,5 +20,5 @@ urlpatterns = [
     path("personentry/", hello.views.personentry, name="personentry"),
     path("admin/", admin.site.urls),
     path("use/", hello.views.use),
-path("newbase/", hello.views.),
+path("newbase/", hello.views.newbase),
 ]
