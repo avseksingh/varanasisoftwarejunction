@@ -1,6 +1,5 @@
-from django.urls import path, include
-
 from django.contrib import admin
+from django.urls import path
 
 admin.autodiscover()
 
@@ -20,6 +19,6 @@ urlpatterns = [
     path("personentry/", hello.views.personentry, name="personentry"),
     path("admin/", admin.site.urls),
     path("use/", hello.views.use),
-path("newbase/", hello.views.newbase),
-path("quiz/", hello.views.quiz),
+    path("newbase/", hello.views.newbase),
+    path("quiz/", hello.views.quiz),
 ]
