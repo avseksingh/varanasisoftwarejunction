@@ -18,7 +18,7 @@ def quiz(request):
         questionno=request.POST["qno"]
         questionno+=1
     #return httpResponse('python quiz!')
-    return render(request, "quiz.html",{"question":questions[questionno]})
+    return render(request, "quiz.html",{"question":questions[questionno],"qno":questionno})
 
 def index(request):
     # return HttpResponse('Hello from Python!')
