@@ -34,7 +34,7 @@ def quiz(request):
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
-                   "Result": Result})
+                   "result": result })
 
 
 def index(request):
