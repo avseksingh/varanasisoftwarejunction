@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
 
 from .models import Greeting
 from .models import Person
@@ -17,6 +17,8 @@ def quiz(request):
     if request.POST:
         questionno=int(request.POST["qno"])
         questionno+=1
+        if questionno>=len(questions):
+            return HttpResponse("Test is over")
     #return httpResponse('python quiz!')
     return render(request, "quiz.html",{"question":questions[questionno],"qno":questionno})
 
