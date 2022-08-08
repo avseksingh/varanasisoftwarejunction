@@ -26,24 +26,25 @@ Quiz App
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <label>{{question.op1}} <input class="form-check-input form-control" name="option" value="a" type="radio"></label>
+            <label>{{question.op1}} <input required class="form-check-input form-control" name="option" value="a" type="radio"></label>
             <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="col-sm-6">
-            <label> {{question.op2}}  <input class="form-check-input form-control"  value="b"  name="option" type="radio"></label>
+            <label> {{question.op2}}  <input required class="form-check-input form-control"  value="b"  name="option" type="radio"></label>
             <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
-            <label> {{question.op3}}  <input value="c"  class="form-check-input form-control" name="option" type="radio"></label>
+            <label> {{question.op3}}  <input value="c" required
+                                             class="form-check-input form-control" name="option" type="radio"></label>
             <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="col-sm-6">
-            <label> {{question.op4}}  <input  value="d"  class="form-check-input form-control" name="option" type="radio"></label>
+            <label> {{question.op4}}  <input  required value="d"  class="form-check-input form-control" name="option" type="radio"></label>
             <div class="valid-feedback">Valid.</div>
     <div class="invalid-feedback">Please fill out this field.</div>
         </div>
