@@ -21,12 +21,14 @@ def quiz(request):
     questionno = 0
     givenanswer = ""
     correctanswer = ""
+    result = ""
     if request.POST:
         givenanswer = request.POST["option"];
 
         questionno = int(request.POST["qno"])
         correctanswer = questions[questionno].get("correct")
         questionno += 1
+        # result = questions[questionno].get("Right")
         if questionno >= len(questions):
             return render(request, 'result.html')
     # return httpResponse('python quiz!')
