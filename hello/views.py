@@ -8,15 +8,15 @@ from .models import Person
 # Create your views here.
 def quiz(request):
     q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
-          "op4": "All of these","correct":"a"}
+          "op4": "All of these", "correct": "a"}
     q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritches",
-          "op3": "Guido van Rossum", "op4": "none","correct":"c"}
+          "op3": "Guido van Rossum", "op4": "none", "correct": "c"}
     q3 = {"question": "Which of the following is the correct extension of the python file?", "op1": ".python",
-          "op2": ".pl", "op3": ".py", "op4": ".p","correct":"c"}
+          "op2": ".pl", "op3": ".py", "op4": ".p", "correct": "c"}
     q4 = {"question": "Who developed C programming language ?", "op1": "denies ritchies", "op2": "Guido van Rossum",
-          "op3": "harsh", "op4": "none","correct":"a"}
+          "op3": "harsh", "op4": "none", "correct": "a"}
     q5 = {"question": "Django is  a ?", "op1": "Programming Language", "op2": "Framework",
-          "op3": "Python Web Framework", "op4": "None","correct":"c"}
+          "op3": "Python Web Framework", "op4": "None", "correct": "c"}
     questions = [q1, q2, q3, q4, q5]
     questionno = 0
     if request.POST:
