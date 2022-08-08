@@ -8,7 +8,7 @@ Quiz App
 
 {% block content %}
 {{question}}
-<form method="post">
+<form method="post"  class="was-validated">
     {% csrf_token %}
 <div class="container-fluid">
     <div class="row">
@@ -17,7 +17,7 @@ Quiz App
         </div>
 
     </div>
-<form method="post"  class="was-validated">
+
     <div class="row">
         <div class="col-sm-6">
             <h2>{{question.question}}</h2>
