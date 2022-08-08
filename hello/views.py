@@ -28,7 +28,7 @@ def quiz(request):
         correctanswer = questions[questionno].get("correct")
         questionno += 1
         if questionno >= len(questions):
-            return HttpResponse("Test is over")
+            return render(request,'result.html')
     # return httpResponse('python quiz!')
     return render(request, "quiz.html",
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
