@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render, HttpResponse
 
 from .models import Greeting
 from .models import Person
@@ -7,28 +7,36 @@ from .models import Person
 
 # Create your views here.
 def quiz(request):
-
-    q1={"question":"What is C?","op1":"Language","op2":"Alphabet","op3":"Ascii character","op4":"All of these"}
-    q2={"question":"who developed python programming language?","op1":"wick van rossum","op2":"rasmus harsh","op3":"guido van Rossum","op4":"none"}
-    q3={"question":"which of the following is the correct extension of the python file?","op1":".python","op2":".pl","op3":".py","op4":".p"}
-    q4={"question":"who developed c programming language ?","op1":"denies ritchies","op2":"shubham","op3":"harsh","op4":"none"}
-    questions=[q1,q2,q3,q4]
+    q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
+          "op4": "All of these","correct":"a"}
+    q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritches",
+          "op3": "Guido van Rossum", "op4": "none"}
+    q3 = {"question": "which of the following is the correct extension of the python file?", "op1": ".python",
+          "op2": ".pl", "op3": ".py", "op4": ".p"}
+    q4 = {"question": "Who developed C programming language ?", "op1": "denies ritchies", "op2": "Guido van Rossum",
+          "op3": "harsh", "op4": "none"}
+    q5 = {"question": "Django is  a ?", "op1": "Programming Language", "op2": "Framework",
+          "op3": "Python Web Framework", "op4": "None"}
+    questions = [q1, q2, q3, q4, q5]
     questionno = 0
     if request.POST:
-        questionno=int(request.POST["qno"])
-        questionno+=1
-        if questionno>=len(questions):
+        questionno = int(request.POST["qno"])
+        questionno += 1
+        if questionno >= len(questions):
             return HttpResponse("Test is over")
-    #return httpResponse('python quiz!')
-    return render(request, "quiz.html",{"question":questions[questionno],"qno":questionno})
+    # return httpResponse('python quiz!')
+    return render(request, "quiz.html", {"question": questions[questionno], "qno": questionno})
+
 
 def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "index.html")
 
+
 def newbase(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "newindex.html")
+
 
 def use(request):
     requests.get("https://google.com")
