@@ -33,7 +33,8 @@ def quiz(request):
     return render(request, "quiz.html",
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
                    "givenanswer": givenanswer,
-                   "correctanswer": correctanswer})
+                   "correctanswer": correctanswer,
+                   "Result": Result})
 
 
 def index(request):
