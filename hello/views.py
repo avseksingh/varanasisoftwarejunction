@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 from .models import Greeting
 from .models import Person
@@ -28,7 +28,7 @@ def quiz(request):
         correctanswer = questions[questionno].get("correct")
         questionno += 1
         if questionno >= len(questions):
-            return render(request,'result.html')
+            return render(request, 'result.html')
     # return httpResponse('python quiz!')
     return render(request, "quiz.html",
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
