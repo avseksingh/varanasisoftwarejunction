@@ -11,7 +11,7 @@ def quiz(request):
           "op4": "All of these","correct":"a"}
     q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritches",
           "op3": "Guido van Rossum", "op4": "none"}
-    q3 = {"question": "which of the following is the correct extension of the python file?", "op1": ".python",
+    q3 = {"question": "Which of the following is the correct extension of the python file?", "op1": ".python",
           "op2": ".pl", "op3": ".py", "op4": ".p"}
     q4 = {"question": "Who developed C programming language ?", "op1": "denies ritchies", "op2": "Guido van Rossum",
           "op3": "harsh", "op4": "none"}
