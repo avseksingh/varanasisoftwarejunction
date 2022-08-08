@@ -23,8 +23,9 @@ def quiz(request):
     correctanswer = ""
     if request.POST:
         givenanswer = request.POST["option"];
-        correctanswer = questions[questionno].get("correct")
+
         questionno = int(request.POST["qno"])
+        correctanswer = questions[questionno].get("correct")
         questionno += 1
         if questionno >= len(questions):
             return HttpResponse("Test is over")
