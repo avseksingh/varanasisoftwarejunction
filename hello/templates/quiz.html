@@ -9,7 +9,7 @@ Quiz App
 {% block content %}
 {{question}}
 <form method="post"  class=" ">
-    <input type="text.hidden" name="qno" value="{{qno}}">
+    <input type="hidden" name="qno" value="{{qno}}">
     {% csrf_token %}
 <div class="container-fluid">
     <div class="row">
