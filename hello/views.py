@@ -13,7 +13,7 @@ def quiz(request):
     q4={"question":"who developed c programming language ?","op1":"denies ritchies","op2":"shubham","op3":"harsh","op4":"none"}
     questions=[q1,q2,q3,q4]
     #return httpResponse('python quiz!')
-    return render(request, "quiz.html",{"questions":questions})
+    return render(request, "quiz.html",{"question":questions[0]})
 
 def index(request):
     # return HttpResponse('Hello from Python!')
