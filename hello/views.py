@@ -9,7 +9,7 @@ from .models import Person
 def quiz(request):
     q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
           "op4": "All of these", "correct": "a"}
-    q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritches",
+    q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritchie",
           "op3": "Guido van Rossum", "op4": "none", "correct": "c"}
     q3 = {"question": "Which of the following is the correct extension of the python file?", "op1": ".python",
           "op2": ".pl", "op3": ".py", "op4": ".p", "correct": "c"}
