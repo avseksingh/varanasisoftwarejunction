@@ -28,7 +28,9 @@ def quiz(request):
         questionno = int(request.POST["qno"])
         correctanswer = questions[questionno].get("correct")
         questionno += 1
-        # result = questions[questionno].get("Right")
+        result = "Yes"
+        if givenanswer != correctanswer:
+            result = "No"
         if questionno >= len(questions):
             return render(request, 'result.html')
     # return httpResponse('python quiz!')
@@ -36,7 +38,7 @@ def quiz(request):
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
-                   "result": result })
+                   "result": result})
 
 
 def index(request):
