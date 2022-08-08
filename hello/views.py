@@ -19,17 +19,19 @@ def quiz(request):
           "op3": "Python Web Framework", "op4": "None", "correct": "c"}
     questions = [q1, q2, q3, q4, q5]
     questionno = 0
-    givenanswer=""
-    correctanswer=""
+    givenanswer = ""
+    correctanswer = ""
     if request.POST:
-        givenanswer=request.POST["option"];
-        correctanswer=questions[questionno].get("correct")
+        givenanswer = request.POST["option"];
+        correctanswer = questions[questionno].get("correct")
         questionno = int(request.POST["qno"])
         questionno += 1
         if questionno >= len(questions):
             return HttpResponse("Test is over")
     # return httpResponse('python quiz!')
-    return render(request, "quiz.html", {"question": questions[questionno], "qno": questionno,"givenanswer":givenanswer,"correctanswer":correctanswer})
+    return render(request, "quiz.html",
+                  {"question": questions[questionno], "qno": questionno, "givenanswer": givenanswer,
+                   "correctanswer": correctanswer})
 
 
 def index(request):
