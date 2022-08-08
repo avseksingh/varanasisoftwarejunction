@@ -17,7 +17,7 @@ Quiz App
         </div>
 
     </div>
-<form method="post">
+<form method="post"  class="was-validated">
     <div class="row">
         <div class="col-sm-6">
             <h2>{{question.question}}</h2>
@@ -26,17 +26,25 @@ Quiz App
     <div class="row">
         <div class="col-sm-6">
             <label>{{question.op1}} <input class="form-check-input form-control" name="option" value="a" type="radio"></label>
+            <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="col-sm-6">
             <label> {{question.op2}}  <input class="form-check-input form-control"  value="b"  name="option" type="radio"></label>
+            <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
             <label> {{question.op3}}  <input value="c"  class="form-check-input form-control" name="option" type="radio"></label>
+            <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="col-sm-6">
             <label> {{question.op4}}  <input  value="d"  class="form-check-input form-control" name="option" type="radio"></label>
+            <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
         </div>
     </div>
 <br>
