@@ -6,6 +6,10 @@ from .models import Person
 
 
 # Create your views here.
+def quiz(request):
+    # return HttpResponse('Hello from Python!')
+    return render(request, "quiz.html")
+
 def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "index.html")
