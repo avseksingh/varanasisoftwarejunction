@@ -15,7 +15,7 @@ def quiz(request):
     questions=[q1,q2,q3,q4]
     questionno = 0
     if request.POST:
-        questionno=request.POST["qno"]
+        questionno=int(request.POST["qno"])
         questionno+=1
     #return httpResponse('python quiz!')
     return render(request, "quiz.html",{"question":questions[questionno],"qno":questionno})
