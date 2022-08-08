@@ -31,7 +31,8 @@ def quiz(request):
             return HttpResponse("Test is over")
     # return httpResponse('python quiz!')
     return render(request, "quiz.html",
-                  {"question": questions[questionno], "qno": questionno, "givenanswer": givenanswer,
+                  {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
+                   "givenanswer": givenanswer,
                    "correctanswer": correctanswer})
 
 
