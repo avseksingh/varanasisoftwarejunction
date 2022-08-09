@@ -8,69 +8,74 @@ Quiz App
 
 {% block content %}
 {{answers}}
-<form method="post"  >
-    <input type="hidden" name="qno" value="{{qno}}">
+<form method="post">
+    <input name="qno" type="hidden" value="{{qno}}">
     {% csrf_token %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Quiz App</h1>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <h2>{{showqno}} ) {{question.question}}</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <label>A {{question.op1}} <input required class="form-check-input form-control" name="option" value="a" type="radio"></label>
-            <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="col-sm-6">
-            <label>B {{question.op2}}  <input required class="form-check-input form-control"  value="b"  name="option" type="radio"></label>
-            <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <label>C {{question.op3}}  <input value="c" required
-                                             class="form-check-input form-control" name="option" type="radio"></label>
-            <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="col-sm-6">
-            <label>D {{question.op4}}  <input  required value="d"  class="form-check-input form-control" name="option" type="radio"></label>
-            <div class="valid-feedback">Valid.</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-
-    </div>
-<br>
-    <div class="row">
-        <div class="col-sm-12">
-            <input class="btn btn-primary form-control" type="submit" value="Submit">
-        </div>
-
-    </div>
-        <input type="hidden" name="totalmarks" value="{{totalmarks}}">
+    <div class="container-fluid">
         <div class="row">
-        <div class="col-sm-4">
-            <h2>Given answer {{givenanswer}}</h2>
+            <div class="col-sm-12">
+                <h1>Quiz App</h1>
+            </div>
+
         </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>{{showqno}} ) {{question.question}}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>A {{question.op1}} <input class="form-check-input form-control" name="option" required type="radio"
+                                                 value="a"></label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="col-sm-6">
+                <label>B {{question.op2}} <input class="form-check-input form-control" name="option" required type="radio"
+                                                 value="b"></label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <label>C {{question.op3}} <input class="form-check-input form-control" name="option"
+                                                 required type="radio"
+                                                 value="c"></label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="col-sm-6">
+                <label>D {{question.op4}} <input class="form-check-input form-control" name="option" required type="radio"
+                                                 value="d"></label>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <input class="btn btn-primary form-control" type="submit" value="Submit">
+            </div>
+
+        </div>
+        <input name="totalmarks" type="hidden" value="{{totalmarks}}">
+        <div class="row">
             <div class="col-sm-4">
-            <h2>Correct answer {{correctanswer}}</h2>
-        </div>
+                <h2>Given answer {{givenanswer}}</h2>
+            </div>
+            <div class="col-sm-4">
+                <h2>Correct answer {{correctanswer}}</h2>
+            </div>
             <div class="col-sm-4">
                 <h2>Result {{result}}</h2>
-        </div>
+            </div>
 
+        </div>
     </div>
-    </form>
+</form>
 </div>
 
 

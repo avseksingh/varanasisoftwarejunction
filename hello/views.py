@@ -43,7 +43,8 @@ def quiz(request):
     correctanswer = ""
     result = ""
     totalmarks = 0
-
+    if not request.POST:
+        request.session["answers"] = None
     if request.POST:
         givenanswer = request.POST["option"]
         questionno = int(request.POST["qno"])
