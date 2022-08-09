@@ -7,8 +7,34 @@ Quiz Result
 
 
 {% block content %}
-<h1> Result </h1>
-<h3>Your Marks Obtained is <h1>{{total}}</h1> out of <h1>5</h1></h3>
+<center><h1> Result </h1></center>
+<div>
+    <div class="container">
+        <div class = "row">
+<!--            <div class = "col">-->
+                <label>Que No.{{showqno}}</label> > <label>{{question}}</label>
+<!--            </div>-->
+
+        </div>
+
+        <div class = "row">
+            <div class="col-sm-6">
+                <label>Your Answer is... {{givenanswer}} </label>
+            </div>
+
+            <div class="col-sm-6">
+                <label>Correct Answer is...{{correctanswer}} </label>
+            </div>
+        </div>
+        <div class = "row">
+            <label>Total Marks Obtained...{{total}} out of 5</label>
+        </div>
+    </div>
+    <input type="submit" value="Log out" >
+</div>
+
+
+
 
 
 {% endblock %}
