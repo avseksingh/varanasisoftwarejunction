@@ -59,7 +59,8 @@ def quiz(request):
         data = {"qno": (questionno - 1), "answer": givenanswer, "correct": correctanswer, "result": result}
         answers.append(data)
         if questionno >= len(questions):
-            return render(request, 'result.html', {"answers": answers})
+            return render(request, 'result.html', {"totalmarks": totalmarks,
+                                                   "answers": answers})
     # return httpResponse('python quiz!')
     request.session["answers"] = answers
     return render(request, "quiz.html",
