@@ -14,8 +14,8 @@ def login(request):
         email = request.POST['email']
         password = request.POST['password']
         title = request.POST['title']
-
         session["name"] = title
+        return render(request, "quiz.html", {"title": title, "session": session})
     return render(request, "login.html", {"title":title, "session": session})
 
 # <<<---- Login Page Ends Here ---->>
@@ -39,7 +39,7 @@ def quiz(request):
     totalmarks = 0
 
     if request.POST:
-        givenanswer = request.POST["option"];
+        givenanswer = request.POST["option"]
         questionno = int(request.POST["qno"])
         totalmarks = int(request.POST["totalmarks"])
         correctanswer = questions[questionno].get("correct")
@@ -53,7 +53,8 @@ def quiz(request):
             return render(request, 'result.html', {"total": totalmarks})
     # return httpResponse('python quiz!')
     return render(request, "quiz.html",
-                  {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
+                  {"question": questions[questionno], "showqno": questionno + 1,
+                   "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
                    "result": result,
