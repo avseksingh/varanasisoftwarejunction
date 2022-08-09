@@ -8,7 +8,12 @@ from .models import Person
 # Create your views here.
 # <<<---- Login Page Starts Here ---->>
 def login(request):
-    return render(request, "login.html")
+    if request.POST:
+        email = request.POST['email']
+        password = request.POST['password']
+        title = request.POST['title']
+        session = request.session.get('title')
+    return render(request, "login.html", {"session": session})
 
 # <<<---- Login Page Ends Here ---->>
 

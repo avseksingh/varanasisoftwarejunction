@@ -7,10 +7,13 @@ User Login
 
 
 {% block content %}
-<h1>user login page</h1>
+<h1>{{session}} user login page</h1>
 <center>
 <div class="col-md-8">
 <!-- Pills navs -->
+  <form method="POST">
+    {% csrf_token %}
+
 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
   <li class="nav-item" role="presentation">
     <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
@@ -47,6 +50,11 @@ User Login
       </div>
 
       <p class="text-center">or:</p>
+      <!-- Title input -->
+      <div class="form-outline mb-4">
+        <input type="title" id="title" class="form-control" />
+        <label class="form-label" for="title">Title</label>
+      </div>
 
       <!-- Email input -->
       <div class="form-outline mb-4">
@@ -152,6 +160,7 @@ User Login
     </form>
   </div>
 </div>
+    </form>
 <!-- Pills content -->
     </div>
 </center>
