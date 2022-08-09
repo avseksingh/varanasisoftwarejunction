@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse,redirect
 
 from .models import Greeting
 from .models import Person
@@ -15,7 +15,7 @@ def login(request):
         password = request.POST['password']
         title = request.POST['title']
         session["name"] = title
-        quiz(request)
+        redirect(quiz)
         #return render(request, "quiz.html", {"title": title, "session": session})
     return render(request, "login.html", {"title":title, "session": session})
 
