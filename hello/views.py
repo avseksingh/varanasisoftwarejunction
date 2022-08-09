@@ -12,7 +12,8 @@ def login(request):
         email = request.POST['email']
         password = request.POST['password']
         title = request.POST['title']
-        session = request.session.get('title')
+        session = request.session
+        session["name"] = title
     return render(request, "login.html", {"session": session})
 
 # <<<---- Login Page Ends Here ---->>
@@ -37,7 +38,6 @@ def quiz(request):
 
     if request.POST:
         givenanswer = request.POST["option"];
-
         questionno = int(request.POST["qno"])
         totalmarks = int(request.POST["totalmarks"])
         correctanswer = questions[questionno].get("correct")
@@ -72,7 +72,6 @@ def use(request):
     requests.get("https://google.com")
     greeting = Greeting()
     greeting.save()
-
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
