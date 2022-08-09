@@ -10,6 +10,11 @@ from .models import Person
 def login(request):
     title = ""
     session = request.session
+    try:
+
+        del session["answers"]
+    except:
+        pass
     if request.POST:
         email = request.POST['email']
         password = request.POST['password']
