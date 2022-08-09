@@ -14,7 +14,7 @@ def login(request):
         title = request.POST['title']
         session = request.session
         session["name"] = title
-    return render(request, "login.html", {"session": session})
+    return render(request, "login.html", {"session": session, "title":title})
 
 # <<<---- Login Page Ends Here ---->>
 
