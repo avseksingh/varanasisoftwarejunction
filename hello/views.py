@@ -10,8 +10,8 @@ from .models import Person
 def login(request):
     title = ""
     if request.POST:
-        email = request.POST['email']
-        password = request.POST['password']
+        # email = request.POST['email']
+        # password = request.POST['password']
         title = request.POST['title']
         # session = request.session
         # session["name"] = title "session": session,
