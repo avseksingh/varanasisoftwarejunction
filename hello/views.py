@@ -22,6 +22,7 @@ def quiz(request):
     givenanswer = ""
     correctanswer = ""
     result = ""
+    totalmarks = 5
     if request.POST:
         givenanswer = request.POST["option"];
 
@@ -31,8 +32,9 @@ def quiz(request):
         result = "Yes"
         if givenanswer != correctanswer:
             result = "No"
+            totalmarks -=1
         if questionno >= len(questions):
-            return render(request, 'result.html')
+            return render(request, 'result.html', {"total":totalmarks})
     # return httpResponse('python quiz!')
     return render(request, "quiz.html",
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
