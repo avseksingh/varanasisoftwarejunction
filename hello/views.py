@@ -66,13 +66,13 @@ def quiz(request):
                                                    "total": totalmarks, "result": answers})
     # return httpResponse('python quiz!')
     request.session["answers"] = answers
-    return render(request, "quiz.html",
-                  {"question": questions[questionno], "showqno": questionno + 1,
-                   "qno": questionno,
-                   "givenanswer": givenanswer,
-                   "correctanswer": correctanswer,
-                   "result": result,
-                   "totalmarks": totalmarks,"answers":answers})
+    return render(request, "quiz.html", {"answers": answers})
+                  # {"question": questions[questionno], "showqno": questionno + 1,
+                  #  "qno": questionno,
+                  #  "givenanswer": givenanswer,
+                  #  "correctanswer": correctanswer,
+                  #  "result": result,
+                  #  "totalmarks": totalmarks, )
 
 
 def index(request):
