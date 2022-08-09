@@ -6,6 +6,11 @@ from .models import Person
 
 
 # Create your views here.
+# <<<---- Login Page Starts Here ---->>
+def login(request):
+    return render(request, "login.html")
+
+# <<<---- Login Page Ends Here ---->>
 
 def quiz(request):
     q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
