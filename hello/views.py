@@ -9,11 +9,12 @@ from .models import Person
 # <<<---- Login Page Starts Here ---->>
 def login(request):
     title = ""
+    session = request.session
     if request.POST:
         email = request.POST['email']
         password = request.POST['password']
         title = request.POST['title']
-        session = request.session
+
         session["name"] = title
     return render(request, "login.html", {"title":title, "session": session})
 
