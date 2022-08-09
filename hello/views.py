@@ -15,7 +15,7 @@ def login(request):
         password = request.POST['password']
         title = request.POST['title']
         session["name"] = title
-        redirect(quiz)
+        return redirect(quiz)
         #return render(request, "quiz.html", {"title": title, "session": session})
     return render(request, "login.html", {"title":title, "session": session})
 
