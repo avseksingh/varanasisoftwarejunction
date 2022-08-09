@@ -14,24 +14,25 @@ Quiz Result
         {% for data in answers %}
         <div class = "row">
 <!--            <div class = "col">-->
-                <label>Que No.{{data.qno}}</label> >
+            <label><h1>Que No.{{data.qno}}</h1></label>
 <!--            </div>-->
 
         </div>
 
         <div class = "row">
             <div class="col-sm-6">
-                <label>Your Answer is... {{data.answer}} </label>
+                <label><h3>Your Answer is... {{data.answer}} </h3></label>
             </div>
 
             <div class="col-sm-6">
-                <label>Correct Answer is...{{data.correct}} </label>
+                <label><h3>Correct Answer is...{{data.correct}} </h3></label>
             </div>
         </div>
-        {% endfor %}
+
         <div class = "row">
-            <label>Total Marks Obtained...{{totalmarks}} out of 5</label>
+            <label><h2>Total Marks Obtained...{{totalmarks}} out of 5</h2></label>
         </div>
+        {% endfor %}
     </div>
     <input type="submit" value="Log out" >
 </div>
