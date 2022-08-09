@@ -59,20 +59,16 @@ def quiz(request):
         data = {"qno": (questionno - 1), "answer": givenanswer, "correct": correctanswer, "result": result}
         answers.append(data)
         if questionno >= len(questions):
-            return render(request, 'result.html', {"showqno": questionno + 1,
-                                                   "question": questions[questionno],
-                                                   "givenanswer": givenanswer,
-                                                   "correctanswer": correctanswer,
-                                                   "total": totalmarks, "result": answers})
+            return render(request, 'result.html', {"answers": answers})
     # return httpResponse('python quiz!')
     request.session["answers"] = answers
-    return render(request, "quiz.html", {"answers": answers})
-                  # {"question": questions[questionno], "showqno": questionno + 1,
-                  #  "qno": questionno,
-                  #  "givenanswer": givenanswer,
-                  #  "correctanswer": correctanswer,
-                  #  "result": result,
-                  #  "totalmarks": totalmarks, )
+    return render(request, "quiz.html",
+                  {"question": questions[questionno], "showqno": questionno + 1,
+                   "qno": questionno,
+                   "givenanswer": givenanswer,
+                   "correctanswer": correctanswer,
+                   "result": result,
+                   "totalmarks": totalmarks, "answers": answers})
 
 
 def index(request):
