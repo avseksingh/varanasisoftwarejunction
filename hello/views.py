@@ -6,7 +6,7 @@ from .models import Person
 
 
 # Create your views here.
-totalmarks = 5
+
 def quiz(request):
     q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
           "op4": "All of these", "correct": "a"}
@@ -23,13 +23,16 @@ def quiz(request):
     givenanswer = ""
     correctanswer = ""
     result = ""
+    totalmarks = 0
 
     if request.POST:
         givenanswer = request.POST["option"];
 
         questionno = int(request.POST["qno"])
+        totalmarks = int(request.POST["totalmarks"])
         correctanswer = questions[questionno].get("correct")
         questionno += 1
+        totalmarks += 1
         result = "Yes"
         if givenanswer != correctanswer:
             result = "No"
@@ -41,7 +44,8 @@ def quiz(request):
                   {"question": questions[questionno], "showqno": questionno + 1, "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
-                   "result": result})
+                   "result": result,
+                   "totalmarks": totalmarks})
 
 
 def index(request):
