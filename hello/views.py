@@ -10,13 +10,13 @@ from .models import Person
 def login(request):
     title = ""
     if request.POST:
-        # email = request.POST.get['email', False]
-        # password = request.POST.get['password', False]
+        email = request.POST['email']
+        password = request.POST['password']
         title = request.POST['title']
-        # session = request.session
-        # session["name"] = title "session": session,
-        # return render(request,{"title":title})
-    return render(request, "login.html", {"title":  title})
+        session = request.session
+        session["name"] = title
+
+    return render(request, "login.html", {"title":title})
 
 # <<<---- Login Page Ends Here ---->>
 
