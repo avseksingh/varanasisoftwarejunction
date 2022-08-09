@@ -1,5 +1,5 @@
 import requests
-from django.shortcuts import render,HttpResponse,redirect
+from django.shortcuts import render, redirect
 
 from .models import Greeting
 from .models import Person
@@ -16,12 +16,17 @@ def login(request):
         title = request.POST['title']
         session["name"] = title
         return redirect("/quiz/")
-        #return render(request, "quiz.html", {"title": title, "session": session})
-    return render(request, "login.html", {"title":title, "session": session})
+        # return render(request, "quiz.html", {"title": title, "session": session})
+    return render(request, "login.html", {"title": title, "session": session})
+
 
 # <<<---- Login Page Ends Here ---->>
 
 def quiz(request):
+    answers = request.session.get("answers")
+    if answers == None:
+        answers = []
+
     q1 = {"question": "What is C?", "op1": "Language", "op2": "Alphabet", "op3": "Ascii character",
           "op4": "All of these", "correct": "a"}
     q2 = {"question": "Who developed Python Programming language?", "op1": "Wick van rossum", "op2": "Dennis Ritchie",
@@ -47,19 +52,23 @@ def quiz(request):
         questionno += 1
         totalmarks += 1
         result = "Yes"
+
         if givenanswer != correctanswer:
             result = "No"
             totalmarks -= 1
+        data = {"qno": (questionno - 1), "answer": givenanswer, "correct": correctanswer, "result": result}
+        answers.append(data)
         if questionno >= len(questions):
-            return render(request, 'result.html', {"total": totalmarks})
+            return render(request, 'result.html', {"total": totalmarks, "result": answers})
     # return httpResponse('python quiz!')
+    request.session["answers"] = answers
     return render(request, "quiz.html",
                   {"question": questions[questionno], "showqno": questionno + 1,
                    "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
                    "result": result,
-                   "totalmarks": totalmarks})
+                   "totalmarks": totalmarks,"answers":answers})
 
 
 def index(request):
