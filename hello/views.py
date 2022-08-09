@@ -8,6 +8,7 @@ from .models import Person
 # Create your views here.
 # <<<---- Login Page Starts Here ---->>
 def login(request):
+    title = ""
     if request.POST:
         email = request.POST['email']
         password = request.POST['password']
