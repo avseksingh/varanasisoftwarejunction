@@ -16,13 +16,13 @@ def login(request):
     except:
         pass
     if request.POST:
-        email = request.POST['email']
-        password = request.POST['password']
+        # email = request.POST['email']
+        # password = request.POST['password']
         title = request.POST['title']
         session["name"] = title
         return redirect("/quiz/")
         # return render(request, "quiz.html", {"title": title, "session": session})
-    return render(request, "login.html", {"title": title, "session": session})
+    return render(request, "login.html", { "session": session})
 
 
 # <<<---- Login Page Ends Here ---->>
