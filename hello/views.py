@@ -73,7 +73,8 @@ def quiz(request):
     # return httpResponse('python quiz!')
     request.session["answers"] = answers
     return render(request, "quiz.html",
-                  {"question": questions[questionno], "showqno": questionno + 1,
+                  {"question": questions[questionno],
+                   "showqno": questionno + 1,
                    "qno": questionno,
                    "givenanswer": givenanswer,
                    "correctanswer": correctanswer,
